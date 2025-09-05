@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('workspace_id')->constrained('workspaces')->onDelete('cascade')->nullable();
-            $table->foreignId('project_id')->constrained('users')->onDelete('cascade')->nullable();
-            $table->foreignId('task_id')->constrained('users')->onDelete('cascade')->nullable();
+            $table->foreignId('project_id')->constrained('projects')->onDelete('cascade')->nullable();
+            $table->foreignId('task_id')->constrained('tasks')->onDelete('cascade')->nullable();
             $table->string('action');
             $table->json('details')->nullable();
             $table->timestamps();
